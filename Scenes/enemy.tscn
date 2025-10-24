@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0gbsark71ob1"]
+
+[ext_resource type="Script" uid="uid://dwdnth7851tvs" path="res://Scripts/Enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://bsxvlc25ls1q4" path="res://Assets/enemies/tile_0121.png" id="1_hghv2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
+radius = 9.0
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(24, 16)
+texture = ExtResource("1_hghv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 16)
+shape = SubResource("CircleShape2D_1f0kj")
