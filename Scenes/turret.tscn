@@ -1,14 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://3yntoqeq3hce"]
 
 [ext_resource type="Texture2D" uid="uid://dg2x4m6f6hn6b" path="res://Pixel_Map/kenney_topdownTanksRedux/PNG/Retina/tank_sand.png" id="1_fcprl"]
-[ext_resource type="Script" uid="uid://bfu0ynx3p6w64" path="res://Scenes/Turret.gd" id="2_hskch"]
+[ext_resource type="Script" uid="uid://bfu0ynx3p6w64" path="res://Scripts/Turret.gd" id="2_hskch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hskch"]
 
 [node name="Turret" type="Area2D"]
+script = ExtResource("2_hskch")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
+rotation = -1.5707964
+scale = Vector2(0.5952381, 0.5869565)
 texture = ExtResource("1_fcprl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,4 +19,3 @@ shape = SubResource("CircleShape2D_hskch")
 
 [node name="FireTimer" type="Timer" parent="."]
 autostart = true
-script = ExtResource("2_hskch")

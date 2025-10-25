@@ -6,17 +6,19 @@ extends Node2D
 
 var timer := 0.0
 
-func _process(delta: float):
+func _process(delta: float) -> void:
 	timer += delta
 	if timer >= spawn_delay:
-		timer = 0
+		timer = 0.0
 		spawn_enemy()
 
 func spawn_enemy():
+	if enemy_scene == null or path == null:
+		return
+
 	var follow = PathFollow2D.new()
 	path.add_child(follow)
 
 	var enemy = enemy_scene.instantiate()
 	follow.add_child(enemy)
-
 	enemy.path_follow = follow
