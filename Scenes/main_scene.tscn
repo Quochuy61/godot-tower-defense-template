@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pwu72dt2h8wa"]
+[gd_scene load_steps=11 format=3 uid="uid://pwu72dt2h8wa"]
 
 [ext_resource type="Script" uid="uid://bs3fhmcr13b5q" path="res://Scripts/EnemySpawner.gd" id="1_6l7je"]
 [ext_resource type="PackedScene" uid="uid://hkcd148w5lvh" path="res://Pixel_Map/tile_map.tscn" id="1_jv6wh"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://bdswl8gbwjcxl" path="res://Scripts/base.gd" id="4_6ev3c"]
 [ext_resource type="Texture2D" uid="uid://b1ynreteuots" path="res://Pixel_Map/kenney_topdownTanksRedux/PNG/Retina/barrelRust_top.png" id="5_maf8m"]
 [ext_resource type="PackedScene" uid="uid://3yntoqeq3hce" path="res://Scenes/turret.tscn" id="6_huasi"]
+[ext_resource type="PackedScene" uid="uid://dlqe0jnlilb81" path="res://Scenes/turret2.tscn" id="8_huasi"]
 [ext_resource type="PackedScene" uid="uid://chilq8g5xey2c" path="res://Scenes/bullet.tscn" id="8_m1efj"]
+[ext_resource type="PackedScene" uid="uid://l84jmn3vjwi6" path="res://Scenes/bullet2.tscn" id="9_m1efj"]
 
 [sub_resource type="Curve2D" id="Curve2D_x6ack"]
 resource_local_to_scene = true
@@ -29,7 +31,7 @@ curve = SubResource("Curve2D_x6ack")
 script = ExtResource("1_6l7je")
 enemy_scene = ExtResource("2_jv6wh")
 path = NodePath("../EnemyPath")
-spawn_delay = 2.5
+spawn_delay = 0.1
 
 [node name="Base" type="Node2D" parent="."]
 script = ExtResource("4_6ev3c")
@@ -43,7 +45,9 @@ texture = ExtResource("5_maf8m")
 [node name="Turret" parent="." instance=ExtResource("6_huasi")]
 position = Vector2(264, 128)
 bullet_scene = ExtResource("8_m1efj")
+FIRE_RATE = 0.1
 
-[node name="Turret2" parent="." instance=ExtResource("6_huasi")]
-position = Vector2(496, 272)
-bullet_scene = ExtResource("8_m1efj")
+[node name="Turret2" parent="." instance=ExtResource("8_huasi")]
+position = Vector2(512, 256)
+bullet_scene = ExtResource("9_m1efj")
+FIRE_RATE = 0.3
